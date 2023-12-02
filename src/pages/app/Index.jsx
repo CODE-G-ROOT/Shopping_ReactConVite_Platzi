@@ -7,6 +7,9 @@ import MyOrders from '../MyOrders';
 import NotFound from '../NotFound';
 import SingIn from '../SingIn';
 
+//? Routes
+import Navbar from '../../components';
+
 import './App.css';
 
 const AppRoutes = () => {
@@ -27,6 +30,7 @@ const App = () => {
   return (
     <BrowserRouter>
       <AppRoutes/>
+      <Navbar/>
     </BrowserRouter>
   );
 };
