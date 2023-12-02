@@ -8,7 +8,7 @@ import NotFound from '../NotFound';
 import SingIn from '../SingIn';
 
 //? Routes
-import Navbar from '../../components';
+import Navbar from '../../components/Navbar';
 
 import './App.css';
 
