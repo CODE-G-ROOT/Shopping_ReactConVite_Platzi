@@ -1,14 +1,16 @@
 import Layout from "../../components/Layout";
+import Card from "../../components/Card";
 
 function Home() {
 
     return (
         <>
-            <div>
-                <Layout>
-                    Home
-                </Layout>
-            </div>
+
+            <Layout>
+                Home
+                <Card />
+            </Layout>
+
         </>
     )
 };
