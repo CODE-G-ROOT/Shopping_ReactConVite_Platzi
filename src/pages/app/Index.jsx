@@ -6,6 +6,7 @@ import MyOrder from '../MyOrder';
 import MyOrders from '../MyOrders';
 import NotFound from '../NotFound';
 import SingIn from '../SingIn';
+import { ShoppingCartProvider } from '../../components/Context';
 
 //? Routes
 import Navbar from '../../components/Navbar';
@@ -14,12 +15,12 @@ import './App.css';
 
 const AppRoutes = () => {
   let routes = useRoutes([
-    { path:'/home',  element: <Home />},
-    { path: '/my-orders', element: <MyOrders/> },
-    { path: '/my-account', element: <MyAccount/> },
-    { path: '/my-order', element: <MyOrder/> },
-    { path: '/*', element: <NotFound/> },
-    { path: '/sing-in', element: <SingIn/> }
+    { path: '/home', element: <Home /> },
+    { path: '/my-orders', element: <MyOrders /> },
+    { path: '/my-account', element: <MyAccount /> },
+    { path: '/my-order', element: <MyOrder /> },
+    { path: '/*', element: <NotFound /> },
+    { path: '/sing-in', element: <SingIn /> }
   ]);
 
   return routes;
@@ -28,10 +29,12 @@ const AppRoutes = () => {
 
 const App = () => {
   return (
-    <BrowserRouter>
-      <AppRoutes/>
-      <Navbar/>
-    </BrowserRouter>
+    <ShoppingCartProvider>
+      <BrowserRouter>
+        <AppRoutes />
+        <Navbar />
+      </BrowserRouter>
+    </ShoppingCartProvider>
   );
 };
 
