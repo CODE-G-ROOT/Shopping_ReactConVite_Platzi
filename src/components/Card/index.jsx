@@ -7,7 +7,7 @@ const Card = ({ data }) => {
 
   return (
     <>
-      <div className="bg-white cursor-pointer w-56 h-60 rounded-lg mx-5">
+      <div className="bg-white cursor-pointer w-56 h-60 rounded-lg">
         <figure className="relative mb-2 w-full h-4/5">
           <span className="absolute bottom-1 left-1 bg-white/60 rounded-md text-black text-sm m-1}" style={{ padding: "0 10px 0 10px" }}>{data.category.name}</span>
           <img
