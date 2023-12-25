@@ -14,8 +14,9 @@ export const ShoppingCartProvider = ({children}) => {
     const closeProductDetail = () => setIsProductDetailOpen(false); //* Recibe el objeto de información referente a la API
 
     
-    // Product Detail · Show Products
-    const [prodcutToShow, setProdcutToSho] = useState({})
+    // Shopping Cart · Products to Cart
+    const [prodcutToShow, setProdcutToSho] = useState({});
+    const [cartProducts, setCartProducts] = useState([]);
 
     return (
         <ShoppingCartContext.Provider value={{
@@ -25,7 +26,9 @@ export const ShoppingCartProvider = ({children}) => {
             closeProductDetail,
             isProductDetailOpen,
             prodcutToShow,
-            setProdcutToSho
+            setProdcutToSho,
+            cartProducts,
+            setCartProducts
         }}>
             {children}
         </ShoppingCartContext.Provider>

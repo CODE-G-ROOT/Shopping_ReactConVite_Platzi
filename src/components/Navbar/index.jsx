@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom';
-import * as icons_bs from "react-icons/bs";
+import * as icons_bs from "react-icons/hi2";
 
 import { useContext } from 'react';
 import { ShoppingCartContext } from '../Context';
@@ -95,7 +95,7 @@ const Navbar = () => {
                     <li>
                         <NavLink to='/sign_in'>
                             <div className='flex gap-3 items-center'>
-                                <icons_bs.BsCart4 /> {context.count}
+                                <icons_bs.HiMiniShoppingBag className='size-4' /> {context.count}
                             </div>
                         </NavLink>
                     </li>

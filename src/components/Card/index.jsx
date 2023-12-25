@@ -11,6 +11,13 @@ const Card = ({ data }) => {
     context.setProdcutToSho(productDetail);
   };
 
+  const addProductsToCart = (productData) => {
+    // * realiza una especie de "push" manteniendo la información anteriormente almancenada
+    context.setCount(context.count + 1);
+    context.setCartProducts([...context.cartProducts, productData]);
+    console.log(context.cartProducts);
+  };
+
   return (
     <>
       <div
@@ -28,7 +35,7 @@ const Card = ({ data }) => {
             className=" m-2 absolute top-0 right-0 flex justify-center items-center bg-white w-6 h-6 rounded-full"
             onClick={(e) => {
               e.stopPropagation();
-              context.setCount(context.count + 1);
+              addProductsToCart(data);
             }}>
             <icons.FaPlus className="text-sm w-auto h-auto text-black"></icons.FaPlus>
           </div>
