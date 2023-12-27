@@ -93,11 +93,9 @@ const Navbar = () => {
                         </NavLink>
                     </li>
                     <li>
-                        <NavLink to='/sign_in'>
-                            <div className='flex gap-3 items-center'>
-                                <icons_bs.HiMiniShoppingBag className='size-4' /> {context.count}
-                            </div>
-                        </NavLink>
+                        <div className='flex gap-3 items-center'>
+                            <icons_bs.HiMiniShoppingBag className='size-4' /> {context.count}
+                        </div>
                     </li>
                 </ul>
             </nav>

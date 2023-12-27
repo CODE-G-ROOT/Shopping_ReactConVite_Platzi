@@ -11,11 +11,15 @@ const Card = ({ data }) => {
     context.setProdcutToSho(productDetail);
   };
 
-  const addProductsToCart = (productData) => {
+  const addProductsToCart = (e, productData) => {
     // * realiza una especie de "push" manteniendo la información anteriormente almancenada
-    context.setCount(context.count + 1);
-    context.setCartProducts([...context.cartProducts, productData]);
+    e.stopPropagation(); // detiene la propagación del programa, para que realize solo una tarea
+    context.setCount(context.count + 1); // se encarga de sumar 1 al estado de la cantidad de productos
+    context.setCartProducts([...context.cartProducts, productData]); // almacena el contenido de la card seleccionada en un array en el contexto
+    context.openCheckoutSideMenu(); // cambia el estado del sidemenu a true
+    context.closeProductDetail(); // oculta el product Detail (cambia el estado a false)
     console.log(context.cartProducts);
+    console.log(context.isCheckoutSideMenuOpen);
   };
 
   return (
@@ -31,12 +35,9 @@ const Card = ({ data }) => {
             src={data.images}
             alt="headphones"
           />
-          <div
+          <div //? Encargado de las funciones de la card 
             className=" m-2 absolute top-0 right-0 flex justify-center items-center bg-white w-6 h-6 rounded-full"
-            onClick={(e) => {
-              e.stopPropagation();
-              addProductsToCart(data);
-            }}>
+            onClick={(e) => addProductsToCart(e, data)}>
             <icons.FaPlus className="text-sm w-auto h-auto text-black"></icons.FaPlus>
           </div>
         </figure>
