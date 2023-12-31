@@ -18,8 +18,6 @@ const Card = ({ data }) => {
     context.setCartProducts([...context.cartProducts, productData]); // almacena el contenido de la card seleccionada en un array en el contexto
     context.openCheckoutSideMenu(); // cambia el estado del sidemenu a true
     context.closeProductDetail(); // oculta el product Detail (cambia el estado a false)
-    console.log(context.cartProducts);
-    console.log(context.isCheckoutSideMenuOpen);
   };
 
   return (
