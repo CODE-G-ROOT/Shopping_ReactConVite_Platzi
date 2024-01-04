@@ -11,9 +11,14 @@ const Navbar = () => {
     const context = useContext(ShoppingCartContext);
     const activeStyle = 'underline underline-offset-4';
 
+    const showCartProducts = () => {
+        context.openCheckoutSideMenu(); // cambia el estado del sidemenu a true
+        context.closeProductDetail(); // oculta el product Detail (cambia el estado a false)
+    }
+
     return (
         <>
-            <nav className='flex justify-between items-center fixed z-10 top-0 w-full py-5 px-8 text-sm font-light bg-white'>
+            <nav className='flex justify-between items-center fixed z-10 top-0 w-full py-5 px-8 text-sm font-light bg-white shadow-sm '>
                 <ul className='flex gap-5 items-center'>
                     <li className='font-semibold text-lg'>
                         <NavLink
@@ -93,7 +98,9 @@ const Navbar = () => {
                         </NavLink>
                     </li>
                     <li>
-                        <div className='flex gap-3 items-center'>
+                        <div className='flex gap-3 items-center cursor-pointer'
+                            onClick={() => showCartProducts()}
+                        >
                             <icons_bs.HiMiniShoppingBag className='size-4' /> {context.count}
                         </div>
                     </li>
